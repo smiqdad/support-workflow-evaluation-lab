@@ -1,0 +1,275 @@
+{
+  "summary": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0
+  },
+  "results": [
+    {
+      "case_id": "SYN-001",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-001",
+        "valid": true,
+        "intent": "shipping_policy",
+        "lifecycle_stage": "pre_purchase",
+        "risk": "low",
+        "ai_eligibility": "yes",
+        "required_source": "policy",
+        "route": "auto_draft",
+        "reasons": [
+          "A factual policy question can be drafted from an approved source."
+        ],
+        "draft_plan": [
+          "Acknowledge the customer's request directly.",
+          "Ground every factual statement in the approved policy source.",
+          "Give the next action and preserve a clear path to a human."
+        ]
+      }
+    },
+    {
+      "case_id": "SYN-002",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-002",
+        "valid": true,
+        "intent": "shipping_policy",
+        "lifecycle_stage": "pre_purchase",
+        "risk": "low",
+        "ai_eligibility": "no",
+        "required_source": "policy",
+        "route": "abstain",
+        "reasons": [
+          "A factual policy question can be drafted from an approved source.",
+          "Approved policy source is unavailable."
+        ],
+        "draft_plan": []
+      }
+    },
+    {
+      "case_id": "SYN-003",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-003",
+        "valid": true,
+        "intent": "product_information",
+        "lifecycle_stage": "pre_purchase",
+        "risk": "low",
+        "ai_eligibility": "yes",
+        "required_source": "product",
+        "route": "auto_draft",
+        "reasons": [
+          "A factual product question can be drafted from an approved source."
+        ],
+        "draft_plan": [
+          "Acknowledge the customer's request directly.",
+          "Ground every factual statement in the approved product source.",
+          "Give the next action and preserve a clear path to a human."
+        ]
+      }
+    },
+    {
+      "case_id": "SYN-004",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-004",
+        "valid": true,
+        "intent": "product_recommendation",
+        "lifecycle_stage": "pre_purchase",
+        "risk": "medium",
+        "ai_eligibility": "draft_only",
+        "required_source": "product",
+        "route": "human_review",
+        "reasons": [
+          "Suitability advice may depend on context not present in the conversation."
+        ],
+        "draft_plan": [
+          "Acknowledge the customer's request directly.",
+          "Ground every factual statement in the approved product source.",
+          "State assumptions and avoid presenting suitability as guaranteed.",
+          "Give the next action and preserve a clear path to a human."
+        ]
+      }
+    },
+    {
+      "case_id": "SYN-005",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-005",
+        "valid": true,
+        "intent": "order_change",
+        "lifecycle_stage": "active_order",
+        "risk": "high",
+        "ai_eligibility": "no",
+        "required_source": "order",
+        "route": "human_handoff",
+        "reasons": [
+          "Post-purchase account changes must be verified and completed by authorized staff."
+        ],
+        "draft_plan": []
+      }
+    },
+    {
+      "case_id": "SYN-006",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-006",
+        "valid": true,
+        "intent": "order_status",
+        "lifecycle_stage": "active_order",
+        "risk": "medium",
+        "ai_eligibility": "no",
+        "required_source": "order",
+        "route": "human_handoff",
+        "reasons": [
+          "Order-specific information requires authentication and review before disclosure.",
+          "Customer identity is not authenticated for order-specific access."
+        ],
+        "draft_plan": []
+      }
+    },
+    {
+      "case_id": "SYN-007",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-007",
+        "valid": true,
+        "intent": "order_status",
+        "lifecycle_stage": "active_order",
+        "risk": "medium",
+        "ai_eligibility": "draft_only",
+        "required_source": "order",
+        "route": "human_review",
+        "reasons": [
+          "Order-specific information requires authentication and review before disclosure."
+        ],
+        "draft_plan": [
+          "Acknowledge the customer's request directly.",
+          "Ground every factual statement in the approved order source.",
+          "Give the next action and preserve a clear path to a human."
+        ]
+      }
+    },
+    {
+      "case_id": "SYN-008",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-008",
+        "valid": true,
+        "intent": "refund_or_compensation",
+        "lifecycle_stage": "after_sales",
+        "risk": "high",
+        "ai_eligibility": "no",
+        "required_source": "human_judgment",
+        "route": "human_handoff",
+        "reasons": [
+          "Financial remedies require human authorization."
+        ],
+        "draft_plan": []
+      }
+    },
+    {
+      "case_id": "SYN-009",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-009",
+        "valid": true,
+        "intent": "delivery_problem",
+        "lifecycle_stage": "after_sales",
+        "risk": "high",
+        "ai_eligibility": "no",
+        "required_source": "order",
+        "route": "human_handoff",
+        "reasons": [
+          "A delivery exception requires authenticated order investigation."
+        ],
+        "draft_plan": []
+      }
+    },
+    {
+      "case_id": "SYN-010",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-010",
+        "valid": true,
+        "intent": "dispute_or_legal",
+        "lifecycle_stage": "after_sales",
+        "risk": "high",
+        "ai_eligibility": "no",
+        "required_source": "human_judgment",
+        "route": "human_handoff",
+        "reasons": [
+          "Dispute or legal-risk language requires accountable human handling."
+        ],
+        "draft_plan": []
+      }
+    },
+    {
+      "case_id": "SYN-011",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-011",
+        "valid": true,
+        "intent": "instruction_attack",
+        "lifecycle_stage": "other",
+        "risk": "high",
+        "ai_eligibility": "no",
+        "required_source": "human_judgment",
+        "route": "human_handoff",
+        "reasons": [
+          "Conversation contains an instruction-manipulation attempt."
+        ],
+        "draft_plan": []
+      }
+    },
+    {
+      "case_id": "SYN-012",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-012",
+        "valid": true,
+        "intent": "unknown",
+        "lifecycle_stage": "other",
+        "risk": "medium",
+        "ai_eligibility": "no",
+        "required_source": "human_judgment",
+        "route": "abstain",
+        "reasons": [
+          "No approved deterministic rule matched this request."
+        ],
+        "draft_plan": []
+      }
+    },
+    {
+      "case_id": "SYN-013",
+      "passed": true,
+      "mismatches": {},
+      "decision": {
+        "case_id": "SYN-013",
+        "valid": false,
+        "intent": "invalid_input",
+        "lifecycle_stage": "unknown",
+        "risk": "unknown",
+        "ai_eligibility": "no",
+        "required_source": "none",
+        "route": "human_review",
+        "reasons": [
+          "missing_conversation_text"
+        ],
+        "draft_plan": []
+      }
+    }
+  ]
+}

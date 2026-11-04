@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "support-workflow-evaluation-lab"
+version = "0.1.0"
+description = "Synthetic evaluation lab for controlled AI-assisted support workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Syed Muhammad Miqdad" }]
+dependencies = []
+
+[project.scripts]
+support-lab = "support_lab.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
